@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://github.com/clef-musical-assistant/react-native-midi-playbackck.git", :tag => "#{s.version}" }
 
-  
+  s.ios.framework = 'AVFoundation'
   s.source_files = "ios/**/*.{h,m,mm,swift}"
   
 

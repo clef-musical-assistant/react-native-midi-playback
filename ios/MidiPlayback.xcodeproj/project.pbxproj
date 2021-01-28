@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		5E555C0D2413F4C50049A1A2 /* MidiPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* MidiPlayback.m */; };
-		F4FF95D7245B92E800C19C63 /*  MidiPlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  MidiPlayback.swift */; };
-
+		833971EA25BE66F000A9391A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833971E925BE66F000A9391A /* AVFoundation.framework */; platformFilter = ios; };
+		F4FF95D7245B92E800C19C63 /* MidiPlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* MidiPlayback.swift */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,11 +25,10 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libMidiPlayback.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMidiPlayback.a; sourceTree = BUILT_PRODUCTS_DIR; };
-
+		833971E925BE66F000A9391A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		B3E7B5891CC2AC0600A0062D /* MidiPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiPlayback.m; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* MidiPlayback-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MidiPlayback-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4FF95D6245B92E800C19C63 /* MidiPlayback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiPlayback.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				833971EA25BE66F000A9391A /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,13 +54,20 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-
 				F4FF95D6245B92E800C19C63 /* MidiPlayback.swift */,
 				B3E7B5891CC2AC0600A0062D /* MidiPlayback.m */,
 				F4FF95D5245B92E700C19C63 /* MidiPlayback-Bridging-Header.h */,
-
 				134814211AA4EA7D00B7C361 /* Products */,
+				833971D325BE31C400A9391A /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		833971D325BE31C400A9391A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				833971E925BE66F000A9391A /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,10 +127,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				F4FF95D7245B92E800C19C63 /* MidiPlayback.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* MidiPlayback.m in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +181,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -221,6 +224,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -238,11 +242,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MidiPlayback;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "MidiPlayback-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Debug;
 		};
@@ -259,10 +261,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MidiPlayback;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "MidiPlayback-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Release;
 		};

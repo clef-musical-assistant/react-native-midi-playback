@@ -3,17 +3,15 @@ import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import MidiPlayback from 'react-native-midi-playback';
 
-
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
   React.useEffect(() => {
-    MidiPlayback.multiply(3, 7).then(setResult);
+    MidiPlayback.setPlaybackFile('Queen_-_Another_One_Bites_the_Dust.mid');
+    MidiPlayback.play();
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Running</Text>
     </View>
   );
 }
