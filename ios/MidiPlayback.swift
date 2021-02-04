@@ -13,7 +13,6 @@ class MidiPlayback: NSObject {
         let path = URL(string: midiFileURL as String)
         print("setPlaybackFile " + (midiFileURL as String))
         do {
-            //TODO get URL from filesystem
             try self.midiPlayer = AVMIDIPlayer(contentsOf: path!, soundBankURL: Bundle.main.url(forResource: "Essential Keys-C-v1.0", withExtension: ".sf2"))
         } catch let error {
             print(error.localizedDescription)
