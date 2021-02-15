@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { Buffer } from 'buffer';
 import MidiPlayback from 'react-native-midi-playback';
 import * as RNFS from 'react-native-fs';
-import { Midi } from '@tonejs/midi';
+import { Midi } from './dist/Midi';
 import * as song from './song.json';
 
 export default function App() {
@@ -16,8 +16,8 @@ export default function App() {
     let slash =
       RNFS.TemporaryDirectoryPath[RNFS.TemporaryDirectoryPath.length - 1] ===
       '/'
-        ? '/'
-        : '';
+        ? ''
+        : '/';
     let path = RNFS.TemporaryDirectoryPath + slash + 'song.mid';
     RNFS.write(
       path,
@@ -28,7 +28,10 @@ export default function App() {
       .then(() => {
         console.log('Successfully wrote MIDI file to ' + path);
         MidiPlayback.setPlaybackFile(path);
+      })
+      .then(() => {
         MidiPlayback.play();
+        console.log(MidiPlayback.isPlaying());
       })
       .catch((err) => {
         console.log(err.message);

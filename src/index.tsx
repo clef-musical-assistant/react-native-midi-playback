@@ -6,6 +6,7 @@ type MidiPlaybackType = {
   play(): void;
   stop(): void;
   reset(): void;
+  isPlaying(): boolean;
 };
 
 const { MidiPlayback } = NativeModules;

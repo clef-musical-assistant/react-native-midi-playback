@@ -1,27 +1,32 @@
 package com.reactnativemidiplayback
 
+import android.media.MediaPlayer
+import android.net.Uri
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
-import android.media.MediaPlayer
+
 
 class MidiPlaybackModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
   private val playbackFile: String = "";
-  private val mediaPlayer: MediaPlayer = MediaPlayer();
+  private var mediaPlayer: MediaPlayer = MediaPlayer();
 
   override fun getName(): String {
       return "MidiPlayback"
   }
 
-  @ReactMethod
+  @ReactMethod(isBlockingSynchronousMethod = true)
   fun setPlaybackFile(url: String) {
-    mediaPlayer.setDataSource(url);
-    mediaPlayer.prepare();
+    val uri = Uri.parse(url);
+    val context = reactApplicationContext;
+    if (context != null) {
+      mediaPlayer = MediaPlayer.create(reactApplicationContext.currentActivity, uri);
+      mediaPlayer.setVolume(50F, 50F);
+    };
   }
 
-  @ReactMethod
+  @ReactMethod(isBlockingSynchronousMethod = true)
   fun play() {
     mediaPlayer.start();
   }
@@ -29,6 +34,16 @@ class MidiPlaybackModule(reactContext: ReactApplicationContext) : ReactContextBa
   @ReactMethod
   fun stop() {
     mediaPlayer.stop();
+  }
+
+  @ReactMethod
+  fun pause() {
+    mediaPlayer.pause();
+  }
+
+  @ReactMethod(isBlockingSynchronousMethod = true)
+  fun isPlaying(): Boolean {
+    return mediaPlayer.isPlaying;
   }
 
 }
