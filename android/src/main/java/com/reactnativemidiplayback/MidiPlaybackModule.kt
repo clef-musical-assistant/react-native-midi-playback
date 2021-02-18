@@ -9,7 +9,6 @@ import com.facebook.react.bridge.ReactMethod
 
 class MidiPlaybackModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
-  private val playbackFile: String = "";
   private var mediaPlayer: MediaPlayer = MediaPlayer();
 
   override fun getName(): String {

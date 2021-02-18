@@ -1,6 +1,6 @@
 {
   "name": "react-native-midi-playback",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MIDI playback in React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -36,13 +36,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/clef-musical-assistant/react-native-midi-playbackck",
+  "repository": "https://github.com/clef-musical-assistant/react-native-midi-playback",
   "author": "Chris Feltner <chris.feltner@Knights.ucf.edu> (https://github.com/chrisfeltner)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/clef-musical-assistant/react-native-midi-playbackck/issues"
+    "url": "https://github.com/clef-musical-assistant/react-native-midi-playback/issues"
   },
-  "homepage": "https://github.com/clef-musical-assistant/react-native-midi-playbackck#readme",
+  "homepage": "https://github.com/clef-musical-assistant/react-native-midi-playback#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

@@ -12,7 +12,7 @@
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-fs": "2.16.6",
-    "@tonejs/midi": "2.0.25",
+    "@tonejs/midi": "^2.0.26",
     "buffer": "6.0.3"
   },
   "devDependencies": {

@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { Buffer } from 'buffer';
 import MidiPlayback from 'react-native-midi-playback';
 import * as RNFS from 'react-native-fs';
-import { Midi } from './dist/Midi';
+import { Midi } from '@tonejs/midi';
 import * as song from './song.json';
 
 export default function App() {
