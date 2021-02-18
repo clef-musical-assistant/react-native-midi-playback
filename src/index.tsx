@@ -3,6 +3,7 @@ import { NativeModules } from 'react-native';
 type MidiPlaybackType = {
   setPlaybackFile(url: string): void;
   setPlaybackData(data: string): void;
+  setSoundBank(url: string): void;
   play(): void;
   stop(): void;
   reset(): void;

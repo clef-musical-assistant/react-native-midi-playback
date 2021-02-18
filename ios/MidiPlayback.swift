@@ -7,13 +7,15 @@ class MidiPlayback: NSObject {
     
     var midiPlayer: AVMIDIPlayer?
     var soundBankURL: URL?
+    var fileURL: URL?
+    var midiData: Data?
 
     @objc(setPlaybackFile:)
     func setPlaybackFile(_ midiFileURL: NSString) {
-        let path = URL(string: midiFileURL as String)
-        print("setPlaybackFile " + (midiFileURL as String))
+        self.fileURL = URL(string: midiFileURL as String)
+        self.midiData = nil
         do {
-            try self.midiPlayer = AVMIDIPlayer(contentsOf: path!, soundBankURL: Bundle.main.url(forResource: "Essential Keys-C-v1.0", withExtension: ".sf2"))
+            try self.midiPlayer = AVMIDIPlayer(contentsOf: self.fileURL!, soundBankURL: self.soundBankURL)
         } catch let error {
             print(error.localizedDescription)
         }
@@ -23,12 +25,27 @@ class MidiPlayback: NSObject {
 
     @objc(setPlaybackData:)
     func setPlaybackData(_ midiData: NSData) {
+        self.midiData = midiData
+        self.fileURL = nil
         do {
             try self.midiPlayer = AVMIDIPlayer(data: midiData as Data, soundBankURL: self.soundBankURL)
         } catch let error {
             print(error.localizedDescription)
         }
 
+        self.midiPlayer?.prepareToPlay()
+    }
+
+    @objc(setSoundfont:)
+    func setSoundBank(_ soundBankURL: NSString) {
+        self.soundBankURL = URL(string: soundBankURL as String)
+        if self.midiPlayer != nil && self.fileURL != nil {
+            self.midiPlayer = AVMIDIPlayer(contentsOf: self.fileURL!, soundBankURL: self.soundBankURL)
+        }
+        else if self.midiPlayer != nil && self.midiData != nil {
+            self.midiPlayer = AVMIDIPlayer(data: self.midiData, soundBankURL: self.soundBankURL)
+        }
+        
         self.midiPlayer?.prepareToPlay()
     }
 
@@ -45,5 +62,15 @@ class MidiPlayback: NSObject {
     @objc(stop)
     func stop() {
         self.midiPlayer?.stop()
+    }
+
+    @objc
+    func isPlaying() {
+        if self.midiPlayer != nil {
+            return self.midiPlayer.isPlaying()
+        }
+        else {
+            return false
+        }
     }
 }
