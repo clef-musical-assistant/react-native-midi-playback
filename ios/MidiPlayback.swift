@@ -25,10 +25,10 @@ class MidiPlayback: NSObject {
 
     @objc(setPlaybackData:)
     func setPlaybackData(_ midiData: NSData) {
-        self.midiData = midiData
+        self.midiData = midiData as Data
         self.fileURL = nil
         do {
-            try self.midiPlayer = AVMIDIPlayer(data: midiData as Data, soundBankURL: self.soundBankURL)
+            try self.midiPlayer = AVMIDIPlayer(data: self.midiData!, soundBankURL: self.soundBankURL)
         } catch let error {
             print(error.localizedDescription)
         }
@@ -40,10 +40,19 @@ class MidiPlayback: NSObject {
     func setSoundBank(_ soundBankURL: NSString) {
         self.soundBankURL = URL(string: soundBankURL as String)
         if self.midiPlayer != nil && self.fileURL != nil {
-            self.midiPlayer = AVMIDIPlayer(contentsOf: self.fileURL!, soundBankURL: self.soundBankURL)
+            do {
+             try self.midiPlayer = AVMIDIPlayer(contentsOf: self.fileURL!, soundBankURL: self.soundBankURL)
+            } catch let error {
+                print(error.localizedDescription)
+            }
         }
         else if self.midiPlayer != nil && self.midiData != nil {
-            self.midiPlayer = AVMIDIPlayer(data: self.midiData, soundBankURL: self.soundBankURL)
+            do {
+                try self.midiPlayer = AVMIDIPlayer(data: self.midiData!, soundBankURL: self.soundBankURL)
+            } catch let error {
+                print(error.localizedDescription)
+            }
+            
         }
         
         self.midiPlayer?.prepareToPlay()
@@ -65,9 +74,9 @@ class MidiPlayback: NSObject {
     }
 
     @objc
-    func isPlaying() {
+    func isPlaying() -> Bool {
         if self.midiPlayer != nil {
-            return self.midiPlayer.isPlaying()
+            return self.midiPlayer!.isPlaying
         }
         else {
             return false
