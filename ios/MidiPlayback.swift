@@ -36,7 +36,7 @@ class MidiPlayback: NSObject {
         self.midiPlayer?.prepareToPlay()
     }
 
-    @objc(setSoundfont:)
+    @objc(setSoundBank:)
     func setSoundBank(_ soundBankURL: NSString) {
         self.soundBankURL = URL(string: soundBankURL as String)
         if self.midiPlayer != nil && self.fileURL != nil {

@@ -19,7 +19,6 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		833971D025BE2F9D00A9391A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8342549C25BE23F100564F0A /* AVFoundation.framework */; };
 		839D26DC25C1139900800C4D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D26DB25C1139900800C4D /* File.swift */; };
-		83E228AD25C2064200D413A8 /* Queen_-_Another_One_Bites_the_Dust.mid in Resources */ = {isa = PBXBuildFile; fileRef = 83E228AC25C2064200D413A8 /* Queen_-_Another_One_Bites_the_Dust.mid */; };
 		83E228B425C2099800D413A8 /* Essential Keys-C-v1.0.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 83E228B225C2099800D413A8 /* Essential Keys-C-v1.0.sf2 */; };
 		83E228BC25C20AFC00D413A8 /* beethoven-symphony7-2-medium-piano.mid in Resources */ = {isa = PBXBuildFile; fileRef = 83E228BB25C20AFC00D413A8 /* beethoven-symphony7-2-medium-piano.mid */; };
 /* End PBXBuildFile section */
@@ -72,7 +71,6 @@
 		8342549C25BE23F100564F0A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		839D26DA25C1139800800C4D /* MidiPlaybackExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MidiPlaybackExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		839D26DB25C1139900800C4D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = MidiPlaybackExample/File.swift; sourceTree = "<group>"; };
-		83E228AC25C2064200D413A8 /* Queen_-_Another_One_Bites_the_Dust.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Queen_-_Another_One_Bites_the_Dust.mid"; sourceTree = "<group>"; };
 		83E228B225C2099800D413A8 /* Essential Keys-C-v1.0.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Essential Keys-C-v1.0.sf2"; path = "../../../../Downloads/Essential Keys-C-v1.0.sf2"; sourceTree = "<group>"; };
 		83E228BB25C20AFC00D413A8 /* beethoven-symphony7-2-medium-piano.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "beethoven-symphony7-2-medium-piano.mid"; sourceTree = "<group>"; };
 		CA3E69C5B9553B26FBA2DF04 /* libPods-MidiPlaybackExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MidiPlaybackExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +133,6 @@
 		13B07FAE1A68108700A75B9A /* MidiPlaybackExample */ = {
 			isa = PBXGroup;
 			children = (
-				83E228AC25C2064200D413A8 /* Queen_-_Another_One_Bites_the_Dust.mid */,
 				83E228BB25C20AFC00D413A8 /* beethoven-symphony7-2-medium-piano.mid */,
 				83E228B225C2099800D413A8 /* Essential Keys-C-v1.0.sf2 */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -346,7 +343,6 @@
 				83E228BC25C20AFC00D413A8 /* beethoven-symphony7-2-medium-piano.mid in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				83E228AD25C2064200D413A8 /* Queen_-_Another_One_Bites_the_Dust.mid in Resources */,
 				83E228B425C2099800D413A8 /* Essential Keys-C-v1.0.sf2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

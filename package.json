@@ -1,6 +1,6 @@
 {
   "name": "react-native-midi-playback",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "MIDI playback in React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -147,7 +147,8 @@
         {
           "project": "tsconfig.build.json"
         }
-      ]
+      ],
+      ["aar", { "reverseJetify": true }]
     ]
   }
 }
