@@ -147,8 +147,7 @@
         {
           "project": "tsconfig.build.json"
         }
-      ],
-      ["aar", { "reverseJetify": true }]
+      ]
     ]
   }
 }
